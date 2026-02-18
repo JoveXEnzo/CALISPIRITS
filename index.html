@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Cali Spirits Vodka</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+<title>Cali Spirits — Cinematic Lab Vodka</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,151 +11,120 @@
 body{
   margin:0;
   font-family:Inter,sans-serif;
-  background:#ffffff;
-  color:#111;
+  background:#05070a;
+  color:white;
   overflow-x:hidden;
 }
 
-/* ---------- NAV ---------- */
+/* ---------- SCROLL PROGRESS BAR ---------- */
 
-.nav{
+#progress{
   position:fixed;
-  width:100%;
   top:0;
-  z-index:1000;
-  backdrop-filter:blur(10px);
-  background:rgba(255,255,255,.7);
-  display:flex;
-  justify-content:space-between;
-  padding:18px 48px;
+  left:0;
+  height:4px;
+  width:0%;
+  background:linear-gradient(90deg,#ff2d2d,#ff8a00);
+  z-index:9999;
 }
 
-.nav a{
-  margin-left:24px;
-  text-decoration:none;
-  color:#222;
-  font-weight:700;
-}
-
-/* ---------- HERO ---------- */
+/* ---------- HERO CINEMATIC ---------- */
 
 .hero{
   min-height:100vh;
   display:grid;
   grid-template-columns:1fr 1fr;
   align-items:center;
-  padding:120px 60px 60px;
+  padding:120px 80px;
   background:
-    radial-gradient(circle at 20% 30%, #f3f4f6, #ffffff 60%);
+    radial-gradient(circle at 20% 20%, #1b1f2a, #05070a 60%);
 }
 
 .hero h1{
-  font-size:64px;
-  line-height:1.05;
-  margin:0 0 20px;
+  font-size:72px;
+  line-height:1.02;
+  text-shadow:0 0 30px rgba(255,0,0,.25);
 }
 
-.hero p{
-  font-size:20px;
-  color:#555;
-}
-
-.cta{
-  background:#c40000;
-  color:white;
+.glow-btn{
+  background:linear-gradient(45deg,#ff2d2d,#ff7b00);
   border:none;
   padding:18px 30px;
-  border-radius:10px;
   font-weight:900;
+  border-radius:14px;
+  color:white;
   cursor:pointer;
-  box-shadow:0 20px 40px rgba(196,0,0,.35);
-  transition:.25s;
-}
-
-.cta:hover{
-  transform:translateY(-3px) scale(1.03);
-}
-
-.hero-img{
-  width:100%;
-  max-width:520px;
-  justify-self:center;
-  filter:drop-shadow(0 60px 80px rgba(0,0,0,.25));
-  transition:transform .2s;
-}
-
-/* ---------- FLOATING BADGES ---------- */
-
-.badges{
-  margin-top:24px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.badge{
-  background:#f2f3f5;
-  padding:10px 14px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:700;
-  box-shadow:0 6px 16px rgba(0,0,0,.08);
-}
-
-/* ---------- SECTION BASE ---------- */
-
-.section{
-  padding:100px 60px;
-}
-
-.section h2{
-  font-size:40px;
-  margin-bottom:10px;
-}
-
-.sub{
-  color:#666;
-  margin-bottom:40px;
-}
-
-/* ---------- GIF PROCESS GRID ---------- */
-
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-
-.process-card{
-  border-radius:18px;
-  overflow:hidden;
-  background:white;
-  box-shadow:0 25px 60px rgba(0,0,0,.12);
+  box-shadow:
+    0 0 0 rgba(255,60,60,0),
+    0 0 40px rgba(255,60,60,.6);
   transition:.3s;
 }
 
-.process-card:hover{
-  transform:translateY(-10px) scale(1.02);
+.glow-btn:hover{
+  box-shadow:
+    0 0 30px rgba(255,60,60,.9),
+    0 0 80px rgba(255,60,60,.6);
+  transform:translateY(-3px);
 }
 
-.process-card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
+/* ---------- PARALLAX LAYERS ---------- */
+
+.layer{
+  position:fixed;
+  width:140%;
+  height:140%;
+  pointer-events:none;
+  opacity:.08;
+  background:
+   repeating-linear-gradient(
+     90deg,
+     #ffffff22,
+     #ffffff22 1px,
+     transparent 1px,
+     transparent 40px
+   );
 }
 
-.process-card div{
-  padding:20px;
-}
-
-/* ---------- GLASS INFO BLOCK ---------- */
+/* ---------- GLASS PANELS ---------- */
 
 .glass{
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(12px);
-  border-radius:22px;
-  padding:40px;
-  box-shadow:0 30px 80px rgba(0,0,0,.15);
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(18px);
+  border-radius:24px;
+  padding:50px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.08),
+    0 40px 120px rgba(0,0,0,.8);
+}
+
+/* ---------- GIF WALL ---------- */
+
+.gif-wall{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.gif-wall img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:18px;
+  filter:contrast(1.1) saturate(1.1);
+  transition:.4s;
+}
+
+.gif-wall img:hover{
+  transform:scale(1.05);
+  box-shadow:0 30px 80px rgba(0,0,0,.9);
+}
+
+/* ---------- COUNTERS ---------- */
+
+.counter{
+  font-size:54px;
+  font-weight:900;
+  color:#ff5a2a;
 }
 
 /* ---------- RETAIL STRIP ---------- */
@@ -167,42 +136,34 @@ body{
 }
 
 .retail div{
-  min-width:220px;
-  padding:30px;
-  border-radius:16px;
-  background:#f5f6f8;
+  min-width:260px;
+  padding:40px;
+  border-radius:18px;
+  background:linear-gradient(#111,#0a0a0a);
+  box-shadow:0 20px 60px rgba(0,0,0,.9);
   font-weight:900;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
-/* ---------- HOTLINE ---------- */
+/* ---------- REVEAL ---------- */
 
-.hotline{
-  background:#111;
-  color:white;
-  border-radius:20px;
-  padding:50px;
-  text-align:center;
-  box-shadow:0 40px 80px rgba(0,0,0,.4);
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s;
 }
 
-.hotline h3{
-  font-size:34px;
-  margin:0 0 10px;
+.reveal.show{
+  opacity:1;
+  transform:none;
 }
 
-/* ---------- FOOTER ---------- */
-
-.footer{
-  padding:50px;
-  text-align:center;
-  color:#777;
+.section{
+  padding:140px 80px;
 }
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
-  .process-grid{grid-template-columns:1fr}
+  .gif-wall{grid-template-columns:1fr}
 }
 
 </style>
@@ -210,100 +171,59 @@ body{
 
 <body>
 
-<!-- NAV -->
-
-<div class="nav">
-  <div><b>CALI SPIRITS</b></div>
-  <div>
-    <a href="#process">Process</a>
-    <a href="#science">Science</a>
-    <a href="#retail">Retail</a>
-    <a href="#contact">Wholesale</a>
-  </div>
-</div>
+<div id="progress"></div>
+<div class="layer" id="grid"></div>
 
 <!-- HERO -->
 
 <section class="hero">
 
-<div>
-<h1>Engineered Purity.<br>Cinematic Craft Vodka.</h1>
-
-<p>Precision distillation. Analytical refinement. Modern spirit engineering.</p>
-
-<button class="cta" onclick="scrollToID('process')">
-Explore the Process
+<div class="reveal">
+<h1>Distilled With<br>Scientific Precision</h1>
+<p>Advanced vodka refinement architecture</p>
+<button class="glow-btn" onclick="go('process')">
+ENTER THE PROCESS
 </button>
-
-<div class="badges">
-<span class="badge">Multi-Stage Distillation</span>
-<span class="badge">Controlled Cut Points</span>
-<span class="badge">Refinement Driven</span>
-<span class="badge">Lab Guided</span>
-</div>
 </div>
 
-<img id="heroImg" class="hero-img" src="assets/hero.png">
+<img id="heroImg" src="assets/hero.png" style="width:520px">
 
 </section>
 
-<!-- PROCESS WITH LIVE GIFS -->
+<!-- PROCESS GIF WALL -->
 
-<section id="process" class="section">
-
-<h2>Distillation Technology</h2>
-<p class="sub">Real process visuals and refinement stages</p>
-
-<div class="process-grid">
-
-<div class="process-card">
-<img src="https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif">
-<div>
-<h3>Column Distillation</h3>
-<p>Continuous fraction separation columns</p>
-</div>
-</div>
-
-<div class="process-card">
-<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
-<div>
-<h3>Thermal Control</h3>
-<p>Temperature-driven vapor staging</p>
-</div>
-</div>
-
-<div class="process-card">
-<img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif">
-<div>
-<h3>Refinement Flow</h3>
-<p>Multi-pass purification cycles</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- SCIENCE BLOCK -->
-
-<section id="science" class="section">
+<section id="process" class="section reveal">
 
 <div class="glass">
-<h2>Scientifically Structured Refinement</h2>
-<p>
-Process-controlled vodka distillation targeting reduced impurity
-carryover and cleaner ethanol fractions using staged separation logic.
-</p>
+<h2>Live Distillation Systems</h2>
+
+<div class="gif-wall">
+<img src="https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif">
+<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+<img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif">
+</div>
+
 </div>
 
 </section>
 
-<!-- RETAIL SHOWCASE -->
+<!-- METRICS -->
 
-<section id="retail" class="section">
+<section class="section reveal">
 
-<h2>Distribution Capability Showcase</h2>
-<p class="sub">Demo retail placement visualization</p>
+<div class="glass">
+<h2>Refinement Metrics</h2>
+<div class="counter" data-n="7">0</div>
+<p>Stage Purification Model</p>
+</div>
+
+</section>
+
+<!-- RETAIL DEMO -->
+
+<section class="section reveal">
+
+<h2>Retail Distribution Capability (Demo)</h2>
 
 <div class="retail">
 <div>Walmart</div>
@@ -311,44 +231,63 @@ carryover and cleaner ethanol fractions using staged separation logic.
 <div>Albertsons</div>
 <div>Vons</div>
 <div>Ralphs</div>
-<div>Total Wine</div>
 </div>
 
 </section>
 
-<!-- WHOLESALE HOTLINE -->
+<!-- HOTLINE -->
 
-<section id="contact" class="section">
+<section class="section reveal">
 
-<div class="hotline">
-<h3>Wholesale Distribution Hotline</h3>
-<p>Partnership & bulk inquiries</p>
-<h2>1-800-CALI-SPIRIT</h2>
-<button class="cta">Distributor Portal</button>
+<div class="glass">
+<h2>Wholesale Distribution Hotline</h2>
+<h1>1-800-CALI-LAB</h1>
+<button class="glow-btn">Distributor Access</button>
 </div>
 
 </section>
-
-<div class="footer">
-Cali Spirits — Advanced Landing Prototype
-</div>
 
 <script>
 
-/* scroll buttons */
+/* scroll progress */
 
-function scrollToID(id){
-  document.getElementById(id)
-    .scrollIntoView({behavior:"smooth"});
+window.onscroll=()=>{
+  let h=document.documentElement;
+  let sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  progress.style.width=sc+"%";
+};
+
+/* reveal */
+
+const io=new IntersectionObserver(es=>{
+ es.forEach(e=>{
+  if(e.isIntersecting)e.target.classList.add("show");
+ });
+});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* parallax grid */
+
+document.addEventListener("mousemove",e=>{
+ grid.style.transform=
+  `translate(${e.clientX/50}px,${e.clientY/50}px)`;
+});
+
+/* scroll jump */
+
+function go(id){
+ document.getElementById(id)
+   .scrollIntoView({behavior:"smooth"});
 }
 
-/* parallax tilt */
+/* counter */
 
-document.addEventListener("mousemove", e=>{
-  const img=document.getElementById("heroImg");
-  const x=(e.clientX/window.innerWidth-.5)*12;
-  const y=(e.clientY/window.innerHeight-.5)*12;
-  img.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
+document.querySelectorAll(".counter").forEach(c=>{
+ let n=+c.dataset.n;
+ let i=setInterval(()=>{
+  c.innerText++;
+  if(c.innerText>=n)clearInterval(i);
+ },120);
 });
 
 </script>

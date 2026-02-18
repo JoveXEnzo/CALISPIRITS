@@ -2,117 +2,305 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CarPoolX</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cali Spirits — Precision Craft Vodka</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
+
+* { box-sizing:border-box; }
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
+  margin:0;
+  font-family: Inter, sans-serif;
+  background: linear-gradient(#ffffff,#f3f4f6);
+  color:#111;
 }
 
-.section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+/* ---------- NAV ---------- */
+
+.nav {
+  display:flex;
+  justify-content:space-between;
+  padding:28px 64px;
+  font-weight:800;
+  letter-spacing:.08em;
 }
 
-.section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.nav-links a {
+  margin-left:28px;
+  text-decoration:none;
+  color:#444;
+  font-weight:600;
 }
 
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  background: rgba(0,0,0,0.45);
-  padding: 30px 40px;
-  border-radius: 14px;
+/* ---------- HERO ---------- */
+
+.hero {
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:40px;
+  padding:60px 64px 80px;
+  align-items:center;
 }
 
-.logo {
-  font-size: 48px;
-  font-weight: bold;
-  letter-spacing: 2px;
+.hero h1 {
+  font-size:56px;
+  line-height:1.05;
+  margin:0 0 18px;
+  font-weight:900;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 26px;
-  background: #00e0ff;
-  color: black;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
+.hero p {
+  font-size:18px;
+  line-height:1.6;
+  color:#555;
+  max-width:520px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 100vh;
+.cta {
+  margin-top:26px;
+  background:#c51616;
+  color:white;
+  border:none;
+  padding:16px 26px;
+  font-weight:800;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
+  box-shadow:0 12px 30px rgba(197,22,22,.35);
 }
 
-.grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* hero image */
+
+.hero-img {
+  width:100%;
+  max-width:520px;
+  justify-self:end;
+  filter: drop-shadow(0 50px 60px rgba(0,0,0,.25));
 }
+
+/* ---------- FEATURE PILLS ---------- */
+
+.pills {
+  display:flex;
+  gap:14px;
+  margin-top:26px;
+  flex-wrap:wrap;
+}
+
+.pill {
+  background:#f0f2f4;
+  padding:12px 16px;
+  border-radius:10px;
+  font-size:14px;
+  color:#444;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 4px 12px rgba(0,0,0,.06);
+}
+
+/* ---------- SECTION TITLE ---------- */
+
+.section-title {
+  text-align:center;
+  padding:70px 20px 10px;
+}
+
+.section-title h2 {
+  font-size:36px;
+  margin:0;
+}
+
+.section-title p {
+  color:#666;
+  margin-top:10px;
+}
+
+/* ---------- GLASS CARDS ---------- */
+
+.card-grid {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:36px;
+  padding:40px 64px 80px;
+}
+
+.glass-card {
+  background: rgba(255,255,255,.7);
+  backdrop-filter: blur(6px);
+  border-radius:18px;
+  padding:34px;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.glass-card h3 {
+  margin-top:0;
+  font-size:20px;
+}
+
+.glass-card p {
+  color:#555;
+  line-height:1.6;
+}
+
+/* ---------- SCIENCE SPLIT ---------- */
+
+.science {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:60px;
+  padding:40px 64px 100px;
+  align-items:center;
+}
+
+.science-box {
+  background:linear-gradient(145deg,#ffffff,#e9edf1);
+  border-radius:26px;
+  height:360px;
+  box-shadow:
+    40px 40px 80px rgba(0,0,0,.15),
+    -20px -20px 50px rgba(255,255,255,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:22px;
+  color:#666;
+  text-align:center;
+}
+
+.science ul {
+  padding-left:20px;
+  line-height:1.9;
+  color:#444;
+  font-weight:500;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:40px;
+  font-size:14px;
+}
+
+@media (max-width: 900px) {
+  .hero, .science { grid-template-columns:1fr; }
+  .card-grid { grid-template-columns:1fr; }
+  .hero-img { justify-self:center; }
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="nav">
+  <div>CALI SPIRITS</div>
+  <div class="nav-links">
+    <a href="#">Process</a>
+    <a href="#">Quality</a>
+    <a href="#">Science</a>
+  </div>
+</div>
+
 <!-- HERO -->
-<section class="section">
-  <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c" />
-  <div class="overlay">
-    <div class="logo">CarPoolX</div>
-    <div>Ride Smarter. Ride Together.</div>
-    <a href="#" class="btn">Get the App</a>
+
+<section class="hero">
+
+  <div>
+    <h1>Precision-Craft Vodka.<br>Engineered Clean.</h1>
+
+    <p>
+      Cali Spirits Vodka is distilled using a multi-stage refinement
+      process designed to reduce unwanted trace compounds while
+      preserving smooth character and clarity.
+    </p>
+
+    <button class="cta">Explore the Process</button>
+
+    <div class="pills">
+      <div class="pill">Ultra-Refined Distillation</div>
+      <div class="pill">Advanced Methanol Control</div>
+      <div class="pill">Precision Crafted Batches</div>
+      <div class="pill">Lab-Verified Standards</div>
+    </div>
   </div>
+
+  <!-- 🔁 replace with your generated image file -->
+  <img class="hero-img" src="hero.png">
+
 </section>
 
-<!-- FEATURE IMAGE STRIP -->
-<section class="grid">
-  <img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-  <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d">
+<!-- TITLE -->
+
+<div class="section-title">
+  <h2>The Science of Ultra-Pure Vodka</h2>
+  <p>Precision Crafted — Not Just Distilled</p>
+</div>
+
+<!-- CARDS -->
+
+<section class="card-grid">
+
+  <div class="glass-card">
+    <h3>Advanced Fractional Distillation</h3>
+    <p>
+      Precision cut-point separation removes higher-risk volatile
+      fractions for a cleaner final spirit.
+    </p>
+  </div>
+
+  <div class="glass-card">
+    <h3>Lower Trace Methanol Profile</h3>
+    <p>
+      Process-controlled refinement targets reduced trace carryover
+      versus conventional production batches.
+    </p>
+  </div>
+
+  <div class="glass-card">
+    <h3>Smoothness Optimization</h3>
+    <p>
+      Multi-pass filtration and structured distill curves designed
+      for cleaner finish and smoother taste.
+    </p>
+  </div>
+
 </section>
 
-<!-- APP MOCKUP SECTION -->
-<section class="section">
-  <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df">
-  <div class="overlay">
-    <div>AI Ride Matching</div>
-    <div>Split Costs • Faster Routes • More Seats</div>
+<!-- SCIENCE -->
+
+<section class="science">
+
+  <div>
+    <h2>Built Like a Formula — Not a Tradition</h2>
+    <p>
+      Most vodka is simply filtered. Cali Spirits is process-engineered
+      using controlled distillation cuts and analytical measurement.
+    </p>
+
+    <ul>
+      <li>Precision cut separation</li>
+      <li>Impurity-reduction targeting</li>
+      <li>Repeatable batch controls</li>
+      <li>Clean finish profile</li>
+    </ul>
   </div>
+
+  <div class="science-box">
+    3D PROCESS<br>VISUAL MODULE
+  </div>
+
 </section>
 
-<!-- COMMUNITY / CARPOOL VISUAL -->
-<section class="section">
-  <img src="https://images.unsplash.com/photo-1520975922284-9e0ce82759c9">
-  <div class="overlay">
-    <div>Share the Ride</div>
-    <div>Save Money & Reduce Traffic</div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="section">
-  <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-  <div class="overlay">
-    <div class="logo">Join CarPoolX</div>
-    <a href="#" class="btn">Sign Up Now</a>
-  </div>
-</section>
+<div class="footer">
+Cali Spirits — Concept Landing Page Mock
+</div>
 
 </body>
 </html>
